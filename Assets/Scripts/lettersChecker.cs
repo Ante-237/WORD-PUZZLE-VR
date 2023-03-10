@@ -23,6 +23,9 @@ public class lettersChecker : MonoBehaviour
 
 
 
+
+
+
     void createDisctionary()
     {
         _letters.Add(1, "CATALYST");

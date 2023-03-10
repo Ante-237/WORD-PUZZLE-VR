@@ -10,14 +10,19 @@ public class puzzleManager : MonoBehaviour
     // Start is called before the first frame update
 
     public UnityEvent backgroundSoundEvent;
+    public UnityEvent victorySound;
 
     public bool[] completeLetter = new bool[13];
+
+
+    [Header("Puzzle Material")]
+    private Material m_PuzzleCompleted;
 
 
     void Start()
     {
         // play background sound
-        setAllFalsle();
+        setAllFalse();
         // event for starting background music. 
         backgroundSoundEvent?.Invoke();
     }
@@ -37,7 +42,7 @@ public class puzzleManager : MonoBehaviour
 
 
     // start default setting everything to false 
-    void setAllFalsle()
+    void setAllFalse()
     {
         for(int i = 0; i < completeLetter.Length; i++)
         {
@@ -59,6 +64,22 @@ public class puzzleManager : MonoBehaviour
         return completeLetter[index];
     }
 
+
+    // loop through list of gameobjects and changed their material if the puzzle was completed. 
+    public void changeMaterialCompleted(GameObject[] letter_objects)
+    {
+        foreach(GameObject obj in letter_objects)
+        {
+            obj.GetComponentInChildren<MeshRenderer>().material = m_PuzzleCompleted;
+        }
+    }
+
+
+    //play victory sound when a puzzle word is complted.
+    public void playVictorySoundOne()
+    {
+        victorySound.Invoke();
+    }
 
     // singleton pattern
     private void Awake()
