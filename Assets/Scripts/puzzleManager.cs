@@ -8,10 +8,13 @@ public class puzzleManager : MonoBehaviour
     public static puzzleManager Instance;
     // Start is called before the first frame update
 
+    public UnityEvent backgroundSoundEvent;
+
 
     void Start()
     {
         // play background sound
+        backgroundSoundEvent.Invoke();
     }
 
     // Update is called once per frame
