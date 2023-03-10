@@ -21,6 +21,11 @@ public class voiceControl : MonoBehaviour
     public bool IsActive => _active;
     private bool _active = false;
 
+
+    // creating a particle effect 
+    [Header(" Particle Effect")]
+    [SerializeField] private GameObject particleEffect;
+
     // Add delegates
     private void OnEnable()
     {
@@ -132,6 +137,12 @@ public class voiceControl : MonoBehaviour
                 appVoiceExperience.Deactivate();
             }
         }
+    }
+
+
+    public void firstword()
+    {
+        /// instantiate a particle effect. 
     }
 }
 
