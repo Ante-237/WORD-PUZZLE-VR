@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class puzzleManager : MonoBehaviour
 {
 
     public static puzzleManager Instance;
     // Start is called before the first frame update
+
+
     void Start()
     {
-        
+        // play background sound
     }
 
     // Update is called once per frame
