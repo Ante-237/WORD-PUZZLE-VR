@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: puzzle
+  m_EditorClassIdentifier: 
+  _clientAccessToken: IYQQPHVY65WZWZ4SMR55SFAR47DPMHGI
+  _appInfo:
+    name: disappear
+    id: 230574632667346
+    lang: en
+    isPrivate: 0
+    createdAt: 2023-03-09T05:10:24-0800
+    trainingStatus: 1
+    lastTrainDuration: 30
+    lastTrainedAt: 2023-03-09T23:44:00-0800
+    nextTrainAt: 2023-03-09T23:43:30-0800
+    intents:
+    - id: 540014754781049
+      name: Beads
+      entities: []
+    - id: 242138011493415
+      name: Convict
+      entities: []
+    - id: 1167724277245207
+      name: Cream
+      entities: []
+    - id: 220719210432530
+      name: Deter
+      entities: []
+    - id: 122354757455556
+      name: Drugs
+      entities: []
+    - id: 925649978557904
+      name: Incision
+      entities: []
+    - id: 1387774385315866
+      name: Lumps
+      entities: []
+    - id: 189636087102377
+      name: Million
+      entities: []
+    - id: 3429929730659039
+      name: Pearl
+      entities: []
+    - id: 743956303955862
+      name: Smile
+      entities: []
+    - id: 253372963689726
+      name: cataclysm
+      entities: []
+    - id: 1949405298743728
+      name: catalyst
+      entities: []
+    - id: 165235855947214
+      name: precise
+      entities: []
+    entities: []
+    traits: []
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+  _configurationId: 
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
+    dictation: 
+  isDemoOnly: 0
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-ba18bd02-46bf-496b-a927-f5e26d1db161.json
+  excludedAssemblies: []

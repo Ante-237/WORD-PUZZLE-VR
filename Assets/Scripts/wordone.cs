@@ -17,10 +17,10 @@ public class wordone : MonoBehaviour
         setFalseAll();
         p = puzzleManager.Instance;
     }
-
+    
 
     // when right letter in the right place added and remained
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
 
         for(int i = 0; i < missingLetters.Length; i++)
@@ -31,7 +31,7 @@ public class wordone : MonoBehaviour
             }
         }
 
-        Debug.Log(" Executing as Expected. ");
+        Debug.LogError(" Executing as Expected. ");
 
         // call check all after any letter is added
         checkAll();
@@ -48,6 +48,8 @@ public class wordone : MonoBehaviour
                 lettersAdded[i] = other.gameObject;
             }
         }
+
+        Debug.LogError(" Was taken out. ");
     }
 
 
@@ -74,8 +76,9 @@ public class wordone : MonoBehaviour
                 count += 1;
             }
         }
+        Debug.Log("Ante count for catalyst is :" + count.ToString());
 
-        if(count == 4)
+        if(count >= 4)
         {
             // start by stopping the letters from being transfered again when picked up
             p.stopOnSecondGrab(lettersAdded);
