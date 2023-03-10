@@ -31,6 +31,8 @@ public class wordone : MonoBehaviour
             }
         }
 
+        Debug.Log(" Executing as Expected. ");
+
         // call check all after any letter is added
         checkAll();
     }
