@@ -1209,6 +1209,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  vc: {fileID: 0}
 --- !u!1 &28112673
 GameObject:
   m_ObjectHideFlags: 0
@@ -39576,12 +39577,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClips:
   - {fileID: 8300000, guid: 1723ed6317c4c4a4692bd3a04c200380, type: 3}
-  _volume: 0.642
+  _volume: 0.892
   _volumeRandomization:
     _useRandomRange: 0
     _min: 0
     _max: 0
-  _pitch: 0.52
+  _pitch: 1.25
   _pitchRandomization:
     _useRandomRange: 0
     _min: 0
@@ -47427,6 +47428,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  vc: {fileID: 0}
 --- !u!1 &1212466388
 GameObject:
   m_ObjectHideFlags: 0
@@ -50302,7 +50304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClips:
   - {fileID: 8300000, guid: 73deaa0703b8f0e4ebcacad026e4a014, type: 3}
-  _volume: 0.61
+  _volume: 0.859
   _volumeRandomization:
     _useRandomRange: 0
     _min: 0
@@ -51041,6 +51043,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  vc: {fileID: 0}
 --- !u!1 &1294131274
 GameObject:
   m_ObjectHideFlags: 0
@@ -54763,7 +54766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382744048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.463, z: 0.869}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54784,13 +54787,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Voice: {fileID: 589605518}
   ValidateEarly: 0
-  intent: wit$cataclysm
-  confidenceThreshold: 0.6
+  intent: cataclysm
+  confidenceThreshold: 0.855
   valueMatchers: []
   formattedValueEvents: []
   onMultiValueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1382744051}
+        m_TargetAssemblyTypeName: voiceControl, Assembly-CSharp
+        m_MethodName: firstword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1382744051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54803,11 +54818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281967ae164b48d418d04b3c7a123f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freshStateText: Try pressing the Activate button and saying "Make the cube red"
-  textArea: {fileID: 0}
+  freshStateText: Complete a Combination and Read it out.
+  textArea: {fileID: 892396364}
   showJson: 0
   appVoiceExperience: {fileID: 589605518}
-  particleEffect: {fileID: 0}
+  particleEffect: {fileID: 710933929}
+  spawnPoint: {fileID: 1156588036}
 --- !u!1 &1383226258
 GameObject:
   m_ObjectHideFlags: 0
@@ -75889,6 +75905,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  vc: {fileID: 0}
 --- !u!1 &1974069169
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ using TMPro;
 public class voiceControl : MonoBehaviour
 {
     [Header("Default States"), Multiline]
-    [SerializeField] private string freshStateText = "Try pressing the Activate button and saying \"Make the cube red\"";
+    [SerializeField] private string freshStateText = "When combination made, read out the word to proceed.";
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI textArea;
@@ -25,6 +25,7 @@ public class voiceControl : MonoBehaviour
     // creating a particle effect 
     [Header(" Particle Effect")]
     [SerializeField] private GameObject particleEffect;
+    [SerializeField] private Transform spawnPoint;
 
     // Add delegates
     private void OnEnable()
@@ -143,6 +144,8 @@ public class voiceControl : MonoBehaviour
     public void firstword()
     {
         /// instantiate a particle effect. 
+        Instantiate(particleEffect, spawnPoint.transform.position, Quaternion.identity);
+        
     }
 }
 

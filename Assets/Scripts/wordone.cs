@@ -14,6 +14,8 @@ public class wordone : MonoBehaviour
     private puzzleManager p;
 
     int count = 0;
+
+    [SerializeField] private voiceControl vc;
     
 
     
@@ -95,6 +97,11 @@ public class wordone : MonoBehaviour
             // update the score board if victory is met
             p.updateScoreBoard();
             stopMoving();
+
+            vc.SetActivation(true);
+
+
+
         }
     }
 
