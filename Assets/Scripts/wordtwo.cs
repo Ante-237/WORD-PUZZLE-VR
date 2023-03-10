@@ -1,13 +1,14 @@
-using System.Threading;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class wordone : MonoBehaviour
+public class wordtwo : MonoBehaviour
 {
-    // word for catalyst
+    // word for incision. 
 
-    private bool[] catalyst = new bool[4];
-    private string[] missingLetters = new string[4] { "c", "t", "l", "m" };
-    private GameObject[] lettersAdded = new GameObject[4];
+    private bool[] catalyst = new bool[2];
+    private string[] missingLetters = new string[2] {"i", "i"};
+    private GameObject[] lettersAdded = new GameObject[2];
 
     private puzzleManager p;
 
@@ -23,7 +24,7 @@ public class wordone : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        for(int i = 0; i < missingLetters.Length; i++)
+        for (int i = 0; i < missingLetters.Length; i++)
         {
             if (other.gameObject.CompareTag(missingLetters[i]))
             {
@@ -52,7 +53,7 @@ public class wordone : MonoBehaviour
     // setting all to false 
     void setFalseAll()
     {
-        for(int i = 0; i < catalyst.Length; i++)
+        for (int i = 0; i < catalyst.Length; i++)
         {
             catalyst[i] = false;
         }
@@ -65,7 +66,7 @@ public class wordone : MonoBehaviour
     void checkAll()
     {
         int count = 0;
-        foreach(bool value in catalyst)
+        foreach (bool value in catalyst)
         {
             if (value)
             {
@@ -73,7 +74,7 @@ public class wordone : MonoBehaviour
             }
         }
 
-        if(count == 4)
+        if (count == 2)
         {
             // start by stopping the letters from being transfered again when picked up
             p.stopOnSecondGrab(lettersAdded);
@@ -87,6 +88,5 @@ public class wordone : MonoBehaviour
             p.updateScoreBoard();
         }
     }
-
 
 }

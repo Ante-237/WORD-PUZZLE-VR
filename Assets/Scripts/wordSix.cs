@@ -1,12 +1,14 @@
-using System.Threading;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class wordone : MonoBehaviour
+public class wordSix : MonoBehaviour
 {
-    // word for catalyst
 
-    private bool[] catalyst = new bool[4];
-    private string[] missingLetters = new string[4] { "c", "t", "l", "m" };
+    // word called deter
+
+    private bool[] catalyst = new bool[2];
+    private string[] missingLetters = new string[2] { "t", "r" };
     private GameObject[] lettersAdded = new GameObject[4];
 
     private puzzleManager p;
@@ -23,7 +25,7 @@ public class wordone : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        for(int i = 0; i < missingLetters.Length; i++)
+        for (int i = 0; i < missingLetters.Length; i++)
         {
             if (other.gameObject.CompareTag(missingLetters[i]))
             {
@@ -52,7 +54,7 @@ public class wordone : MonoBehaviour
     // setting all to false 
     void setFalseAll()
     {
-        for(int i = 0; i < catalyst.Length; i++)
+        for (int i = 0; i < catalyst.Length; i++)
         {
             catalyst[i] = false;
         }
@@ -65,7 +67,7 @@ public class wordone : MonoBehaviour
     void checkAll()
     {
         int count = 0;
-        foreach(bool value in catalyst)
+        foreach (bool value in catalyst)
         {
             if (value)
             {
@@ -73,7 +75,7 @@ public class wordone : MonoBehaviour
             }
         }
 
-        if(count == 4)
+        if (count == 1)
         {
             // start by stopping the letters from being transfered again when picked up
             p.stopOnSecondGrab(lettersAdded);
@@ -87,6 +89,4 @@ public class wordone : MonoBehaviour
             p.updateScoreBoard();
         }
     }
-
-
 }

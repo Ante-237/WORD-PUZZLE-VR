@@ -34126,6 +34126,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   completeLetter: 00000000000000000000000000
+  scoreBoard: {fileID: 0}
 --- !u!1 &1004889081
 GameObject:
   m_ObjectHideFlags: 0
@@ -45233,7 +45234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925ef87c5bafc37469a2f7ec825dee4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClips: []
+  _audioClips:
+  - {fileID: 8300000, guid: 73deaa0703b8f0e4ebcacad026e4a014, type: 3}
   _volume: 0.61
   _volumeRandomization:
     _useRandomRange: 0

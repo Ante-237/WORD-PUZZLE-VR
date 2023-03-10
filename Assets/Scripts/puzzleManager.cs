@@ -122,6 +122,8 @@ public class puzzleManager : MonoBehaviour
         return score;
     }
 
+    // when a word is complete , crossing the word. 
+
     // singleton pattern
     private void Awake()
     {
