@@ -77,11 +77,11 @@ public class wordtwo : MonoBehaviour
         if (count == 2)
         {
             // start by stopping the letters from being transfered again when picked up
-            p.stopOnSecondGrab(lettersAdded);
+            //p.stopOnSecondGrab(lettersAdded);
             //let the puzzle manager know letter one is completed
             p.setCompleteLetter(0, true);
             // change the material of letter one. 
-            p.changeMaterialCompleted(lettersAdded);
+          //  p.changeMaterialCompleted(lettersAdded);
             // play a victory sound for letter one 
             p.playVictorySoundOne();
             // update the score board if victory is met

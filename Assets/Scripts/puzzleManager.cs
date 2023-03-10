@@ -77,9 +77,9 @@ public class puzzleManager : MonoBehaviour
 
 
     // loop through list of gameobjects and changed their material if the puzzle was completed. 
-    public void changeMaterialCompleted(GameObject[] letter_objects)
+    public void changeMaterialCompleted(MeshRenderer[] letter_objects)
     {
-        foreach(GameObject obj in letter_objects)
+        foreach(MeshRenderer obj in letter_objects)
         {
             obj.GetComponentInChildren<MeshRenderer>().material = m_PuzzleCompleted;
         }

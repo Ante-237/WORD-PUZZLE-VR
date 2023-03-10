@@ -106,7 +106,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-  _configurationId: 
+  _configurationId: c590fe19-a23a-434d-8242-3abb041cea26
   timeoutMS: 10000
   endpointConfiguration:
     uriScheme: 

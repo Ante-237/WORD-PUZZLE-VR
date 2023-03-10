@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Threading;
 using UnityEngine;
 
@@ -6,12 +7,15 @@ public class wordone : MonoBehaviour
     // word for catalyst
 
     private bool[] catalyst = new bool[4];
-    private string[] missingLetters = new string[4] { "c", "t", "l", "m" };
-    private GameObject[] lettersAdded = new GameObject[4];
+    [SerializeField] private string[] missingLetters = new string[4] {"c", "t", "l", "m"};
+    [SerializeField] private MeshRenderer[] lettersAdded = new MeshRenderer[4];
+    [SerializeField] private Grabbable[] grabbingObjects = new Grabbable[4];
 
     private puzzleManager p;
 
+    int count = 0;
 
+    
     private void Start()
     {
         setFalseAll();
@@ -28,6 +32,15 @@ public class wordone : MonoBehaviour
             if (other.gameObject.CompareTag(missingLetters[i]))
             {
                 catalyst[i] = true;
+                count++;
+                playshot();
+                Debug.LogError("the letter" + missingLetters[i] + " is found");
+                grabbingObjects[i] = other.gameObject.GetComponent<Grabbable>();
+                if(other.gameObject.name == "pice")
+                  {
+                      lettersAdded[i] = other.GetComponent<MeshRenderer>();
+                  }
+              
             }
         }
 
@@ -45,12 +58,17 @@ public class wordone : MonoBehaviour
             if (other.gameObject.CompareTag(missingLetters[i]))
             {
                 catalyst[i] = false;
-                lettersAdded[i] = other.gameObject;
+            
+                if(other.gameObject.name == "pice")
+                  {
+                     lettersAdded[i] = other.GetComponent<MeshRenderer>();
+                  }
             }
         }
 
-        Debug.LogError(" Was taken out. ");
+     
     }
+    
 
 
     // setting all to false 
@@ -68,30 +86,37 @@ public class wordone : MonoBehaviour
     // this method will later on be called by the voice command when it matches an utterance. 
     void checkAll()
     {
-        int count = 0;
-        foreach(bool value in catalyst)
-        {
-            if (value)
-            {
-                count += 1;
-            }
-        }
+
+ 
         Debug.Log("Ante count for catalyst is :" + count.ToString());
 
         if(count >= 4)
         {
+            Debug.Log("Ante , everything is okay, word completed");
             // start by stopping the letters from being transfered again when picked up
-            p.stopOnSecondGrab(lettersAdded);
-            //let the puzzle manager know letter one is completed
+            // p.stopOnSecondGrab(lettersAdded);
+            // let the puzzle manager know letter one is completed
             p.setCompleteLetter(0, true);
             // change the material of letter one. 
-            p.changeMaterialCompleted(lettersAdded);
+            // p.changeMaterialCompleted(lettersAdded);
             // play a victory sound for letter one 
-            p.playVictorySoundOne();
             // update the score board if victory is met
             p.updateScoreBoard();
+            stopMoving();
+        }
+    }
+
+    void stopMoving()
+    {
+        foreach(Grabbable grab in grabbingObjects)
+        {
+            grab.TransferOnSecondSelection = false;
         }
     }
 
 
+    void playshot()
+    {
+        p.playVictorySoundOne();
+    }
 }
