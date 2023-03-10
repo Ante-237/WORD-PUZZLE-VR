@@ -1204,6 +1204,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  grabbingObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &28112673
 GameObject:
   m_ObjectHideFlags: 0
@@ -34426,7 +34431,7 @@ MonoBehaviour:
     _useRandomRange: 0
     _min: 0
     _max: 0
-  _pitch: 0.01
+  _pitch: 0.52
   _pitchRandomization:
     _useRandomRange: 0
     _min: 0
@@ -42235,6 +42240,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  grabbingObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1212466388
 GameObject:
   m_ObjectHideFlags: 0
@@ -45840,6 +45850,11 @@ MonoBehaviour:
   - t
   - l
   lettersAdded:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  grabbingObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -49550,6 +49565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382744049}
   - component: {fileID: 1382744050}
+  - component: {fileID: 1382744051}
   m_Layer: 0
   m_Name: Response
   m_TagString: Untagged
@@ -49593,6 +49609,18 @@ MonoBehaviour:
   onMultiValueEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1382744051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382744048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281967ae164b48d418d04b3c7a123f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383226258
 GameObject:
   m_ObjectHideFlags: 0
@@ -70582,6 +70610,11 @@ MonoBehaviour:
   - t
   - l
   lettersAdded:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  grabbingObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -14,6 +14,7 @@ public class wordone : MonoBehaviour
     private puzzleManager p;
 
     int count = 0;
+    
 
     
     private void Start()
@@ -32,15 +33,11 @@ public class wordone : MonoBehaviour
             if (other.gameObject.CompareTag(missingLetters[i]))
             {
                 catalyst[i] = true;
-                count++;
+                count += 1;
                 playshot();
                 Debug.LogError("the letter" + missingLetters[i] + " is found");
                 grabbingObjects[i] = other.gameObject.GetComponent<Grabbable>();
-                if(other.gameObject.name == "pice")
-                  {
-                      lettersAdded[i] = other.GetComponent<MeshRenderer>();
-                  }
-              
+               
             }
         }
 
@@ -57,12 +54,7 @@ public class wordone : MonoBehaviour
         {
             if (other.gameObject.CompareTag(missingLetters[i]))
             {
-                catalyst[i] = false;
-            
-                if(other.gameObject.name == "pice")
-                  {
-                     lettersAdded[i] = other.GetComponent<MeshRenderer>();
-                  }
+                catalyst[i] = false;             
             }
         }
 
