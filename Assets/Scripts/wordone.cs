@@ -74,7 +74,16 @@ public class wordone : MonoBehaviour
 
         if(count == 4)
         {
+            // start by stopping the letters from being transfered again when picked up
+            p.stopOnSecondGrab(lettersAdded);
+            //let the puzzle manager know letter one is completed
             p.setCompleteLetter(0, true);
+            // change the material of letter one. 
+            p.changeMaterialCompleted(lettersAdded);
+            // play a victory sound for letter one 
+            p.playVictorySoundOne();
+            // update the score board if victory is met
+            p.updateScoreBoard();
         }
     }
 

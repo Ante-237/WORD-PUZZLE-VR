@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
+using Oculus.Interaction;
+
 public class puzzleManager : MonoBehaviour
 {
 
@@ -17,6 +20,11 @@ public class puzzleManager : MonoBehaviour
 
     [Header("Puzzle Material")]
     private Material m_PuzzleCompleted;
+
+
+    [Header("Score Board")]
+    public TextMeshProUGUI scoreBoard;
+
 
 
     void Start()
@@ -74,11 +82,44 @@ public class puzzleManager : MonoBehaviour
         }
     }
 
+    // when the steps are completed, make the object not movable. 
+    public void stopOnSecondGrab(GameObject[] object_data)
+    {
+       foreach(GameObject obj in object_data)
+        {
+            obj.GetComponent<Grabbable>().TransferOnSecondSelection = false;
+        }
+    }
+
 
     //play victory sound when a puzzle word is complted.
     public void playVictorySoundOne()
     {
         victorySound.Invoke();
+    }
+
+    // update the score board for letters formed
+    public void updateScoreBoard()
+    {
+        if(scoreBoard != null)
+        {
+            scoreBoard.text = "<color=yellow> SCORE : </yellow>" + getPointCount().ToString();
+        }
+    }
+
+    // calculate the points by checking the number of active letters completed. 
+    int getPointCount()
+    {
+        int score = 0;
+        foreach(bool com in completeLetter)
+        {
+            if (com)
+            {
+                score += 0;
+            }
+        }
+
+        return score;
     }
 
     // singleton pattern
