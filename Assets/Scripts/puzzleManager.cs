@@ -19,11 +19,14 @@ public class puzzleManager : MonoBehaviour
 
 
     [Header("Puzzle Material")]
-    private Material m_PuzzleCompleted;
+    [SerializeField] private Material m_PuzzleCompleted;
 
 
     [Header("Score Board")]
     public TextMeshProUGUI scoreBoard;
+
+    [Header("Word List")]
+    public List<TextMeshProUGUI> wordsCancel = new List<TextMeshProUGUI>();
 
 
 
@@ -95,7 +98,7 @@ public class puzzleManager : MonoBehaviour
     //play victory sound when a puzzle word is complted.
     public void playVictorySoundOne()
     {
-        victorySound.Invoke();
+        victorySound?.Invoke();
     }
 
     // update the score board for letters formed
@@ -104,6 +107,7 @@ public class puzzleManager : MonoBehaviour
         if(scoreBoard != null)
         {
             scoreBoard.text = "<color=yellow> SCORE : </yellow>" + getPointCount().ToString();
+            cancelIfcomplete();
         }
     }
 
@@ -123,6 +127,17 @@ public class puzzleManager : MonoBehaviour
     }
 
     // when a word is complete , crossing the word. 
+    public void cancelIfcomplete()
+    {
+        for(int i = 0; i < completeLetter.Length; i++)
+        {
+            if (completeLetter[i])
+            {
+                string presentNow = wordsCancel[i].text;
+                wordsCancel[i].text = "<color=red><s>" + presentNow + "</s></color>";
+            }
+        }
+    }
 
     // singleton pattern
     private void Awake()
